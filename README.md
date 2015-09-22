@@ -1,3 +1,7 @@
+# "Асинхронно програмиране с Python 3"
+
+24.09.2015, SoftUni 
+
 ## Полезни линкове
 
 * [Tulip: Async I/O for Python 3](https://www.youtube.com/watch?v=1coLC-MUCJc)
