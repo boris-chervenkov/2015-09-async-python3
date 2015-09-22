@@ -2,6 +2,9 @@
 
 24.09.2015, SoftUni 
 
+[http://bit.ly/async-python](http://bit.ly/async-python)
+
+
 ## Полезни линкове
 
 * [Tulip: Async I/O for Python 3](https://www.youtube.com/watch?v=1coLC-MUCJc)
