@@ -26,11 +26,11 @@ class OpenPortDetecionWebSocket(websocket.WebSocketHandler):
 
     @gen.coroutine
     def check_open_port(self, ip, port, description):
-        print("Detecting open port IP={} port={} ({})".format(ip, port, description))
         try:
             iostream = yield self.tcp_client.connect(host=ip, port=port)
             iostream.close()
             self.write_message("отворен порт {} - {}".format(port, description))
+            print("Detected open port IP={} port={} ({})".format(ip, port, description))
             return True
         except:
             return False
