@@ -1,7 +1,8 @@
 /.ipynb_checkpoints
 *.sublime-*
 __pycache__
-/source/tornado/bin
-/source/tornado/include
-/source/tornado/lib
-
+source/tornado-example/bin
+source/tornado-example/include
+source/tornado-example/lib
+source/tornado-example/share
+source/tornado-example/.Python

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Я да видим ... :о)</title>
+    <link rel="stylesheet" href="{{ static_url('style.css') }}">
+
+</head>
+<body>
+    <h1>Я да видим ... :о)</h1>
+
+    <h3>IP адресът ти е "{{ request.remote_ip }}"</h3>
+
+    <p>Да видим какви портове имаш отворени ...</p>
+    <div class="results">&nbsp;</div>
+
+    <script type="text/javascript">
+        window.addEventListener('load', function() {
+            var ws = new WebSocket("ws://{{request.host}}/ws");
+            ws.onopen = function() {
+               ws.send("start");
+            };
+            ws.onmessage = function (evt) {
+                var elements = document.getElementsByClassName('results');
+                var results = !!elements ? elements[0] : null;
+                if (results) {
+                    addResult(results, evt.data);
+                }
+            };
+
+            function addResult(container, text) {
+                var r = document.createElement('div');
+                r.className = 'result';
+                r.appendChild(document.createTextNode(text))
+                container.appendChild(r);
+            }
+        });
+    </script>
+</body>
+</html>
